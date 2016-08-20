@@ -1,0 +1,13 @@
+<h1>Pick patient</h1>
+
+<%= form_tag new_irena_path, method: "get" do %>
+Search for:
+    <%= label_tag(:q, "by name:") %>
+    <%= text_field_tag(:q) %>
+    
+    <%= label_tag(:q, "by pesel:") %>
+    <%= text_field_tag(:q) %>
+    
+    <%= hidden_field_tag(:doctor_id, @doctor.id) %>
+    <%= submit_tag("Search") %>
+<% end %> 

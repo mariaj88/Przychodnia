@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @doctor.name %>
 </p>
-
+<% 8.times do |i| %>
+<p><%= link_to "Godzina #{8+i}.", check_irenas_path(hour: i, doctor_id: @doctor.id) %></p>
+<% end %>
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>

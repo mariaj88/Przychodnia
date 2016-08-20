@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do
+  Doctor.create(name: Faker::Name.name)
+end
+
+100.times do
+  pesel = Activepesel::Pesel.generate(:one,
+          :sex => [1,2].sample,
+          :date_of_birth => Faker::Time.between(DateTime.now - 3000, DateTime.now)).number
+  Patient.create(name: Faker::Name.name, pesel: pesel)
+end
+
+puts "Done!"
