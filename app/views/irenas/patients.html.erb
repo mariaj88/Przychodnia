@@ -5,9 +5,10 @@ Search for:
     <%= label_tag(:q, "by name:") %>
     <%= text_field_tag(:q) %>
     
-    <%= label_tag(:q, "by pesel:") %>
-    <%= text_field_tag(:q) %>
+    <%= label_tag(:p, "by pesel:") %>
+    <%= text_field_tag(:p) %>
     
     <%= hidden_field_tag(:doctor_id, @doctor.id) %>
+    <%= hidden_field_tag(:date, params[:date]) %>
     <%= submit_tag("Search") %>
 <% end %> 
